@@ -1,6 +1,6 @@
 import { createDrawerNavigator } from "@react-navigation/drawer"
-import Feed from "../screens/MainTabs/Feed"
 import CustomDrawer from "../components/specific/CustomDrawer"
+import MainTabs from "./MainTabs"
 
 const Drawer = createDrawerNavigator()
 
@@ -13,7 +13,7 @@ export default function DrawerAndTabs(){
                 drawerPosition: 'left'
             }}
         >
-            <Drawer.Screen name="MainTabs" component={Feed} />
+            <Drawer.Screen name="MainTabs" component={MainTabs} />
         </Drawer.Navigator>
     )
 }

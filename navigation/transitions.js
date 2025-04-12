@@ -4,7 +4,7 @@ import { Animated, Easing } from "react-native"
 export const transitionConfig = {
   animation: 'timing',
   config: {
-    duration: 250,
+    duration: 300,
     // easing: Easing.bezier(0.28, 0, 0.63, 1),
     easing: Easing.bezier(0.39,0.57,0.56,1),
     useNativeDriver: true,
