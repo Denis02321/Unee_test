@@ -4,14 +4,24 @@
     "slug": "UneeTest",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/Light.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
+    "plugins": [
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon-light.png",
+          "backgroundColor": "#ffffff",
+          "dark": {
+            "image": "./assets/splash-icon-dark.png",
+            "backgroundColor": "#000000"
+          },
+          "resizeMode": "contain",
+          "imageWidth": 200
+        }
+      ]
+    ],
     "ios": {
       "supportsTablet": true
     },
@@ -19,7 +29,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.denis02321.UneeTest"
     },
     "web": {
       "favicon": "./assets/favicon.png"

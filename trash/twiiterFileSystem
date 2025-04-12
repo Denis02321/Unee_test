@@ -1,0 +1,84 @@
+src/
+├── assets/
+│   ├── fonts/              # Custom fonts
+│   ├── icons/              # SVG icons
+│   └── images/             # App images
+│
+├── components/
+│   ├── common/             # Reusable UI components
+│   │   ├── Button.js
+│   │   ├── Tweet.js        # Tweet component
+│   │   ├── UserCard.js
+│   │   └── ...
+│   │
+│   ├── navigation/         # Custom navigators
+│   │   ├── TabBar.js       # Custom tab bar
+│   │   └── ...
+│   │
+│   └── specific/           # Screen-specific components
+│       ├── Compose/        # Components for compose screen
+│       └── ...
+│
+├── constants/
+│   ├── colors.js
+│   ├── sizes.js
+│   └── ...
+│
+├── context/                # State management
+│   ├── AuthContext.js
+│   ├── TweetContext.js
+│   └── ...
+│
+├── hooks/                  # Custom hooks
+│   ├── useAuth.js
+│   ├── useTweetActions.js
+│   └── ...
+│
+├── navigation/             # App navigation structure
+│   ├── AuthStack.js
+│   ├── MainStack.js
+│   ├── BottomTabs.js
+│   └── ...
+│
+├── screens/
+│   ├── Auth/
+│   │   ├── Login.js
+│   │   ├── Signup.js
+│   │   └── ...
+│   │
+│   ├── Home/
+│   │   ├── Feed.js
+│   │   └── ...
+│   │
+│   ├── Explore/
+│   │   ├── Trends.js
+│   │   └── ...
+│   │
+│   ├── Notifications/
+│   │   └── ...
+│   │
+│   ├── Messages/
+│   │   ├── List.js
+│   │   ├── Chat.js
+│   │   └── ...
+│   │
+│   ├── Profile/
+│   │   ├── UserProfile.js
+│   │   ├── EditProfile.js
+│   │   └── ...
+│   │
+│   └── Compose/            # Tweet composition
+│       └── ...
+│
+├── services/
+│   ├── auth.js             # Auth API calls
+│   ├── tweets.js           # Tweet API calls
+│   └── ...
+│
+├── utils/
+│   ├── helpers.js
+│   ├── formatTime.js       # "2h ago" formatting
+│   └── ...
+│
+├── App.js                  # Main app entry
+└── index.js                # Entry point
