@@ -7,28 +7,23 @@
     "icon": "./assets/Light.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
-    "plugins": [
-      [
-        "expo-splash-screen",
-        {
-          "image": "./assets/splash-icon.png",
-          "backgroundColor": "#6610f2",
-          "dark": {
-            "image": "./assets/splash-icon.png",
-            "backgroundColor": "#6610f2"
-          },
-          "resizeMode": "contain",
-          "imageWidth": 200
-        }
-      ]
-    ],
+    "splash": {
+      "image": "./assets/splash-icon-light.png",
+      "backgroundColor": "#6610f2",
+      "dark": {
+        "image": "./assets/splash-icon-dark.png",
+        "backgroundColor": "#6610f2"
+      },
+      "resizeMode": "contain",
+      "imageWidth": 200
+    },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#6610f2"
       },
       "package": "com.denis02321.UneeTest"
     },

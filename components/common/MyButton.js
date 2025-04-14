@@ -1,4 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity } from "react-native"
+import { primaryColor } from "../../constants/constants"
 
 export default function MyButton({ title, onPress }) {
   return (
@@ -16,7 +17,7 @@ const styles = StyleSheet.create({
       marginTop: 10
     },
     button: {
-      backgroundColor: '#1DA1F2',
+      backgroundColor: primaryColor,
       marginTop: 10,
       paddingVertical: 10,
       paddingHorizontal: 20,

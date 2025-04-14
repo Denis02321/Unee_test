@@ -1,13 +1,17 @@
-import { useNavigation } from "@react-navigation/native"
+import { useNavigation, useTheme } from "@react-navigation/native"
 import { GlobalStyles } from "../../styles/GlobalStyles"
 import MyButton from "../../components/common/MyButton"
 import { Text, View } from "react-native"
 
 export default function Profile() {
   const navigation = useNavigation()
+
+  const { colors } = useTheme()
+  const styles = GlobalStyles(colors)
+
   return (
-    <View style={GlobalStyles.container}>
-      <Text>Profile</Text>
+    <View style={styles.container}>
+      <Text style={styles.text}>Profile</Text>
       <MyButton title='Back' onPress={()=> navigation.goBack()} />
     </View>
   )
