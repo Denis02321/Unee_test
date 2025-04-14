@@ -5,12 +5,18 @@ import DrawerAndTabs from "./navigation/DrawerAndTabs"
 import { createStackNavigator } from "@react-navigation/stack"
 import Settings from "./screens/Settings/Settings"
 import Profile from "./screens/Profile/Profile"
+import { DarkTheme } from "./theme/darkTheme"
+import { LightTheme } from "./theme/lightTheme"
+import useStore from "./store/Store"
 
 const Stack = createStackNavigator()
 
 export default function App() {
+
+  const currentTheme = useStore((state) => state.theme)
+
   return (
-    <NavigationContainer>
+    <NavigationContainer theme={currentTheme === 'dark' ? DarkTheme : LightTheme}>
       <Stack.Navigator
         initialRouteName="Auth"
         screenOptions={{

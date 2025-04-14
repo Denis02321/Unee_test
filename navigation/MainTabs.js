@@ -6,10 +6,13 @@ import Search from "../screens/MainTabs/Search"
 import Chats from "../screens/MainTabs/Chats"
 import Communities from "../screens/MainTabs/Communities"
 import Post from "../screens/MainTabs/Post"
+import { useTheme } from "@react-navigation/native"
 
 const Tab = createBottomTabNavigator()
 
 export default function MainTabs(){
+
+  const { colors } = useTheme()
 
     const tabScreens = [
         {
@@ -67,7 +70,7 @@ export default function MainTabs(){
                 tabBarShowLabel: false,
                 tabBarStyle:{
                     position: 'absolute',
-                    backgroundColor: '#fff',
+                    backgroundColor: colors.background,
                     borderTopWidth: 0,
                     elevation: 0,
                     height: 60,
