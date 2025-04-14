@@ -9,6 +9,7 @@ export default function LoginStack() {
     return (
       <Stack.Navigator
         screenOptions={{
+          headerShown: false,
           cardOverlayEnabled: true,
           cardShadowEnabled: true,
           transitionSpec: {

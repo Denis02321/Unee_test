@@ -11,6 +11,7 @@ export default function RegisterStack() {
       <Stack.Navigator 
         initialRouteName='Register1'
         screenOptions={{
+          headerShown: false,
           cardStyleInterpolator: shrinkAndSlideFromRight,
           transitionSpec: {
             open: transitionConfig,

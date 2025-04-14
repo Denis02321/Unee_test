@@ -8,6 +8,9 @@ import Profile from "./screens/Profile/Profile"
 import { DarkTheme } from "./theme/darkTheme"
 import { LightTheme } from "./theme/lightTheme"
 import useStore from "./store/Store"
+import { StatusBar } from "react-native"
+import { primaryColor } from "./constants/constants"
+import StatusBarCustom from "./components/common/StatusBarCustom"
 
 const Stack = createStackNavigator()
 
@@ -16,6 +19,8 @@ export default function App() {
   const currentTheme = useStore((state) => state.theme)
 
   return (
+    <>
+    <StatusBarCustom />
     <NavigationContainer theme={currentTheme === 'dark' ? DarkTheme : LightTheme}>
       <Stack.Navigator
         initialRouteName="Auth"
@@ -34,5 +39,6 @@ export default function App() {
         <Stack.Screen name="Profile" component={Profile} />
       </Stack.Navigator>
     </NavigationContainer>
+    </>
   )
 }
