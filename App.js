@@ -11,6 +11,7 @@ import useStore from "./store/Store"
 import { StatusBar } from "react-native"
 import { primaryColor } from "./constants/constants"
 import StatusBarCustom from "./components/common/StatusBarCustom"
+import { SafeAreaProvider } from "react-native-safe-area-context"
 
 const Stack = createStackNavigator()
 
@@ -19,26 +20,26 @@ export default function App() {
   const currentTheme = useStore((state) => state.theme)
 
   return (
-    <>
-    <StatusBarCustom />
-    <NavigationContainer theme={currentTheme === 'dark' ? DarkTheme : LightTheme}>
-      <Stack.Navigator
-        initialRouteName="Auth"
-        screenOptions={{
-          headerShown: false,
-          cardStyleInterpolator: shrinkAndSlideFromRight,
-          transitionSpec: {
-            open: transitionConfig,
-            close: transitionConfig,
-          },
-        }}
-      >
-        <Stack.Screen name="Auth" component={AuthStack} />
-        <Stack.Screen name="DrawerAndTabs" component={DrawerAndTabs} />
-        <Stack.Screen name="Settings" component={Settings} />
-        <Stack.Screen name="Profile" component={Profile} />
-      </Stack.Navigator>
-    </NavigationContainer>
-    </>
+    <SafeAreaProvider>
+      <StatusBarCustom />
+      <NavigationContainer theme={currentTheme === 'dark' ? DarkTheme : LightTheme}>
+        <Stack.Navigator
+          initialRouteName="Auth"
+          screenOptions={{
+            headerShown: false,
+            cardStyleInterpolator: shrinkAndSlideFromRight,
+            transitionSpec: {
+              open: transitionConfig,
+              close: transitionConfig,
+            },
+          }}
+        >
+          <Stack.Screen name="Auth" component={AuthStack} />
+          <Stack.Screen name="DrawerAndTabs" component={DrawerAndTabs} />
+          <Stack.Screen name="Settings" component={Settings} />
+          <Stack.Screen name="Profile" component={Profile} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   )
 }

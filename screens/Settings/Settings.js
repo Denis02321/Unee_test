@@ -3,6 +3,7 @@ import { GlobalStyles } from "../../styles/GlobalStyles"
 import MyButton from "../../components/common/MyButton"
 import { Switch, Text, View } from "react-native"
 import useStore from "../../store/Store"
+import SafeScreen from "../../components/common/SafeScreen"
 
 export default function Settings() {
   const navigation = useNavigation()
@@ -11,21 +12,16 @@ export default function Settings() {
   const currentTheme = useStore(state => state.theme)
 
   const { colors } = useTheme()
+  const styles = GlobalStyles(colors)
 
   return (
-    <View 
-      // style={GlobalStyles.container}
-      style={{
-        flex: 1,
-        backgroundColor: colors.background,
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
+    <SafeScreen 
+      style={styles.container}
     >
       <Text style={{color: colors.text}}>Settings</Text>
       <Text style={{color: colors.text}}>current theme: {currentTheme}</Text>
       <Switch value={currentTheme==='dark'?true:false} onChange={toggleTheme} />
       <MyButton title='Back' onPress={()=> navigation.goBack()} />
-    </View>
+    </SafeScreen>
   )
 }
